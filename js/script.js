@@ -1,6 +1,60 @@
 'use strict';
 
 
+for (let i = 0; i < 5; i++) {
+   console.log(i);
+}
+
+
+// *
+// **
+// ***
+// ****
+// *****
+// ******
+
+let yelka = '';
+const ctep = 7;
+
+for (let i = 1; i < ctep; i++) {
+
+   for ( let j = 0; j < i; j++) {
+      yelka += '*';
+   }
+
+   yelka += '\n';
+}
+
+console.log(yelka);
+
+// ++++++++++++++++++++ let to let
+// for (let i = 1; i < 3; i++) {
+//    console.log(i);
+//    for (let j = 1; j < 3; j++) {
+//       console.log(j);
+      
+//    }
+// }
+
+
+// +++++++++++++++++++++ While
+// const num = 50;
+
+// while (num < 55) {
+//    console.log(num);
+//    num++;
+// }
+
+// +++++++++++++++++++++  let
+// for (let i = 1; i < 10; i++) {
+//    if (i === 6) {
+      // break;
+      // continue;
+//    }
+
+//    console.log(i);
+// }
+
 // let hamburger;
 // const fries = NaN;
 // const cola = 0;
