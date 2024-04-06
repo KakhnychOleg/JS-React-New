@@ -1,16 +1,16 @@
 'use strict';
 
 
-let hamburger;
-const fries = NaN;
-const cola = 0;
-const nuggets = 2;
+// let hamburger;
+// const fries = NaN;
+// const cola = 0;
+// const nuggets = 2;
 
-// console.log(undefined || false);
+// // console.log(undefined || false);
 
-if (hamburger && cola || fries === 3 && nuggets) {
-   console.log('Done!')
-}
+// if (hamburger && cola || fries === 3 && nuggets) {
+//    console.log('Done!')
+// }
 
 
 // Home
