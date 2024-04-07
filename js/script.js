@@ -1,22 +1,34 @@
 'use strict';
 
-
-// Dont repeat yourself
-const usdCurr = 26;
-const eurCurr = 28;
-const discount = 0.5;
-
-function convert(amount, curr) {
-   return curr * amount;
+// #1
+function sayHello(name) {
+   return `Привет, ${name}!`;
 }
+sayHello('Антон');
 
-function discountPrice(result) {
-   console.log(result * discount);
+// #2
+function returnNeighboringNumbers(number) {
+   return [number - 1, number, number + 1];
 }
+returnNeighboringNumbers(5);
 
-const res = convert(500, usdCurr);
+// ++++++++++++++++++++++++ Dont repeat yourself +++++++++++++++++++++++
 
-discountPrice(res);
+// const usdCurr = 26;
+// const eurCurr = 28;
+// const discount = 0.5;
+
+// function convert(amount, curr) {
+//    return curr * amount;
+// }
+
+// function discountPrice(result) {
+//    console.log(result * discount);
+// }
+
+// const res = convert(500, usdCurr);
+
+// discountPrice(res);
 
 
 // test arrow function
