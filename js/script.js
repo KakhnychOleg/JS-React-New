@@ -1,33 +1,70 @@
 'use strict';
 
 
+// Dont repeat yourself
+const usdCurr = 26;
+const eurCurr = 28;
+const discount = 0.5;
+
+function convert(amount, curr) {
+   return curr * amount;
+}
+
+function discountPrice(result) {
+   console.log(result * discount);
+}
+
+const res = convert(500, usdCurr);
+
+discountPrice(res);
+
+
+// test arrow function
+// const arrow = (a, b) => a * b;
+// console.log(arrow(5, 5));
+
+// test function declaration
+// function summa(a, b) {
+//    return (a + b);
+// }
+
+// console.log(summa(5, 12));
+
+// test function exprassion
+// const amotherNum = function() {
+//    console.log('Hello!');
+// };
+
+// amotherNum();
+
+
 
 // optimaze user popup
-const numberOfFilms = +prompt("Сколько фильмов вы уже просмотрели?", "");
+// const numberOfFilms = +prompt("Сколько фильмов вы уже просмотрели?", "");
 
-const peronalMovieDB = {
-   count: numberOfFilms,
-   movies: {},
-   actors: {},
-   genres: [],
-   privat: false
-}
+// const peronalMovieDB = {
+//    count: numberOfFilms,
+//    movies: {},
+//    actors: {},
+//    genres: [],
+//    privat: false
+// }
 
-for (let i = 0; i < 2; i++) {
-   let a = prompt("Один из последних просмотренных фильмов?", "");
-   let b = prompt("На сколько вы оцениваете его?", "");
+// for (let i = 0; i < 2; i++) {
+//    let a = prompt("Один из последних просмотренных фильмов?", "");
+//    let b = prompt("На сколько вы оцениваете его?", "");
 
-   if (a != '' && b != '' && a != true && b != true && a.length != 50) {
-      peronalMovieDB.movies[a] = b;
-      console.log('Ales Good!');
-   } else {
-      console.log('Problema');
-      i--;
-   }
+//    if (a != '' && b != '' && a != true && b != true && a.length != 50) {
+//       peronalMovieDB.movies[a] = b;
+//       console.log('Ales Good!');
+//    } else {
+//       console.log('Problema');
+//       i--;
+//    }
 
-}
+// }
 
-console.log(peronalMovieDB);
+// console.log(peronalMovieDB);
 
 // const film1 = prompt("Один из последних просмотренных фильмов?", ""),
 //       film2 = prompt("На сколько вы оцениваете его?", ""),
