@@ -1,16 +1,32 @@
 'use strict';
 
-// #1
-function sayHello(name) {
-   return `Привет, ${name}!`;
-}
-sayHello('Антон');
+// Method String
+let someText = "Hello World!";
 
-// #2
-function returnNeighboringNumbers(number) {
-   return [number - 1, number, number + 1];
-}
-returnNeighboringNumbers(5);
+console.log(someText.slice(0, 5)); // Hello
+console.log(someText.indexOf('o')); // 4
+console.log(someText.toLocaleUpperCase()); // HELLO WORLD!
+console.log(someText.toLocaleLowerCase()); // hello world!
+
+
+// Method Number
+let number = 12.2;
+console.log(Math.round(number));
+
+const test = "12.2px";
+console.log(parseInt(test));
+
+// #1
+// function sayHello(name) {
+//    return `Привет, ${name}!`;
+// }
+// sayHello('Антон');
+
+// // #2
+// function returnNeighboringNumbers(number) {
+//    return [number - 1, number, number + 1];
+// }
+// returnNeighboringNumbers(5);
 
 // ++++++++++++++++++++++++ Dont repeat yourself +++++++++++++++++++++++
 
