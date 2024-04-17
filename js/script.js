@@ -1,5 +1,23 @@
 'use strict';
 
+// Callback function ================================================================================
+function firstFunction(arg1, callback) {
+   console.log(`Первая функция: ${arg1}!`);
+   callback();
+}
+
+function done() {
+   console.log('Good!');
+}
+
+firstFunction(5, done);
+
+// Пример анонимной функции ++++++++++++++++++++++
+// firstFunction(5, function() {
+//    console.log('Good!');
+// });
+
+
 // Место для задачи по функциям ======================================================================
 function calculateVolumeAndArea(calculate) {
    if (calculate < 0 || calculate == " " || !Number.isInteger(calculate)) {
@@ -12,7 +30,7 @@ function calculateVolumeAndArea(calculate) {
    return `Объем куба: ${resultV}, площадь всей поверхности: ${resultS}`;
 }
 
-calculateVolumeAndArea(15);
+// calculateVolumeAndArea(15);
 // console.log(calculateVolumeAndArea(15));
 
 
@@ -30,7 +48,7 @@ function getCoupeNumber(placeNumber) {
 }
 
 // getCoupeNumber(33);
-console.log(getCoupeNumber(33));
+// console.log(getCoupeNumber(33));
 
 
 // optimaze user popup. Part 2 =======================================================================
@@ -83,7 +101,7 @@ function detectePersonalLevel() {
    }
 }
 
-detectePersonalLevel();
+// detectePersonalLevel();
 
 // Выводит обьект с информацие если не стоит peronalMovieDB.privat = true
 function showMyDB(hidden) {
@@ -92,7 +110,7 @@ function showMyDB(hidden) {
    }
 }
 
-showMyDB(peronalMovieDB.privat);
+// showMyDB(peronalMovieDB.privat);
 
 function writeYourGenres() {
    for (let j = 1; j <= 3; j++) {
@@ -105,7 +123,10 @@ function writeYourGenres() {
    }
 }
 
-writeYourGenres();
+// writeYourGenres();
+
+
+
 
 // Method String
 // let someText = "Hello World!";
