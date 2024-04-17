@@ -1,20 +1,94 @@
 'use strict';
 
+// optimaze user popup. Part 2
+let numberOfFilms;
+
+function start() {
+   numberOfFilms = +prompt("Сколько фильмов вы уже просмотрели?", "");
+
+   while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+      numberOfFilms = +prompt("Сколько фильмов вы уже просмотрели?", "");
+   }
+}
+
+// start();
+
+const peronalMovieDB = {
+   count: numberOfFilms,
+   movies: {},
+   actors: {},
+   genres: [],
+   privat: false
+}
+
+function rememberMyFilms () {
+   for (let i = 0; i < 2; i++) {
+      let a = prompt("Один из последних просмотренных фильмов?", "");
+      let b = prompt("На сколько вы оцениваете его?", "");
+
+      if (a != '' && b != '' && a != true && b != true && a.length != 50) {
+         peronalMovieDB.movies[a] = b;
+         console.log('Ales Good!');
+      } else {
+         console.log('Problema');
+         i--;
+      }
+   }
+}
+
+// rememberMyFilms();
+
+function detectePersonalLevel() {
+   if (peronalMovieDB.count < 10) {
+      console.log('Просмотрено довольно мало фильмов');
+   } else if (peronalMovieDB.count >= 10 && peronalMovieDB.count < 30) {
+      console.log('Вы классический зритель');
+   } else if (peronalMovieDB.count >= 30) {
+      console.log('Вы киноман');
+   } else {
+      console.log('Ошибка');
+   }
+}
+
+detectePersonalLevel();
+
+// Выводит обьект с информацие если не стоит peronalMovieDB.privat = true
+function showMyDB(hidden) {
+   if (!hidden) {
+      console.log(peronalMovieDB);
+   }
+}
+
+showMyDB(peronalMovieDB.privat);
+
+function writeYourGenres() {
+   for (let j = 1; j <= 3; j++) {
+      // Усовершенствованный вариант кода
+      peronalMovieDB.genres[j - 1] = prompt(`Ваш любимый жанр под номером ${j}`);
+
+      // Обычный вариант кода
+      // const genre = prompt(`Ваш любимый жанр под номером ${j}`);
+      // peronalMovieDB.genres[j - 1] = genre;
+   }
+}
+
+writeYourGenres();
+
 // Method String
-let someText = "Hello World!";
+// let someText = "Hello World!";
 
-console.log(someText.slice(0, 5)); // Hello
-console.log(someText.indexOf('o')); // 4
-console.log(someText.toLocaleUpperCase()); // HELLO WORLD!
-console.log(someText.toLocaleLowerCase()); // hello world!
+// console.log(someText.slice(0, 5)); // Hello
+// console.log(someText.indexOf('o')); // 4
+// console.log(someText.toLocaleUpperCase()); // HELLO WORLD!
+// console.log(someText.toLocaleLowerCase()); // hello world!
 
 
-// Method Number
-let number = 12.2;
-console.log(Math.round(number));
+// // Method Number
+// let number = 12.2;
+// console.log(Math.round(number));
 
-const test = "12.2px";
-console.log(parseInt(test));
+// const test = "12.2px";
+// console.log(parseInt(test));
 
 // #1
 // function sayHello(name) {
@@ -110,19 +184,19 @@ console.log(parseInt(test));
 // *****
 // ******
 
-let yelka = '';
-const ctep = 7;
+// let yelka = '';
+// const ctep = 7;
 
-for (let i = 1; i < ctep; i++) {
+// for (let i = 1; i < ctep; i++) {
 
-   for ( let j = 0; j < i; j++) {
-      yelka += '*';
-   }
+//    for ( let j = 0; j < i; j++) {
+//       yelka += '*';
+//    }
 
-   yelka += '\n';
-}
+//    yelka += '\n';
+// }
 
-console.log(yelka);
+// console.log(yelka);
 
 // ++++++++++++++++++++ let to let
 // for (let i = 1; i < 3; i++) {
