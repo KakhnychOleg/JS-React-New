@@ -1,6 +1,39 @@
 'use strict';
 
-// optimaze user popup. Part 2
+// Место для задачи по функциям ======================================================================
+function calculateVolumeAndArea(calculate) {
+   if (calculate < 0 || calculate == " " || !Number.isInteger(calculate)) {
+      return 'При вычислении произошла ошибка';
+   }
+
+   const resultV = calculate * calculate * calculate;
+   const resultS = 6 * (calculate * calculate);
+    
+   return `Объем куба: ${resultV}, площадь всей поверхности: ${resultS}`;
+}
+
+calculateVolumeAndArea(15);
+// console.log(calculateVolumeAndArea(15));
+
+
+// Место для задачи по функциям ======================================================================
+function getCoupeNumber(placeNumber) {
+   if (placeNumber < 0 || placeNumber == " " || !Number.isInteger(placeNumber)) {
+      return 'При вычислении произошла ошибка';
+   }
+
+   if (placeNumber === 0 || placeNumber > 36) {
+      return 'Таких мест в вагоне не существует';
+   }
+
+   return Math.ceil(placeNumber / 4);
+}
+
+// getCoupeNumber(33);
+console.log(getCoupeNumber(33));
+
+
+// optimaze user popup. Part 2 =======================================================================
 let numberOfFilms;
 
 function start() {
