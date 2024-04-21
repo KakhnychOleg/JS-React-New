@@ -1,5 +1,58 @@
 'use strict';
 
+// Array ============================================================================================
+// const arr = [1, 2, 3, 6, 8]
+// const arr = [52, 13, 46, 38]
+// arr.sort(compareNum);
+// console.log(arr);
+
+// function compareNum(a, b) {
+//    return a - b;
+// }
+
+// =========== forEach() ==========================
+// arr.forEach(function(item, i, arr) {
+//    console.log(`${i}: ${item} внутри массива ${arr}`);
+// });
+// =========== В консоле
+// 0: 2 внутри массива 2,3,6,8
+// 1: 3 внутри массива 2,3,6,8
+// 2: 6 внутри массива 2,3,6,8
+// 3: 8 внутри массива 2,3,6,8
+
+// console.log(arr.length);  // Работает по принципу: считает все индексы и к последнему +1
+
+// arr.pop(); // [ 1, 2, 3, 6]
+// arr.push(10); // [ 1, 2, 3, 6, 8, 10 ]
+
+// console.log(arr);
+
+// ========== Цикл для перебора массива ============
+// for (let i = 0; i < arr.length; i++) {
+//    console.log(arr[i]);
+// }
+// ========== Результат цикла:
+// 1
+// 2
+// 3
+// 6
+// 8
+
+// =========== Цикл для перебора массива ============
+// for (let value of arr) {
+//    console.log(value);
+// }
+// ============ Результат цикла:
+// 1
+// 2
+// 3
+// 6
+// 8
+
+// const str = prompt("", "");
+// const product = str.split(", ");
+// console.log(product);
+
 // Object ES6 =======================================================================================
 const BlockOptions = {
    width: 1024,
@@ -16,23 +69,23 @@ const BlockOptions = {
 // BlockOptions.makeTest();
 
 // Переменная для подсчета вложенных элементов
-let counterOptions = 0;
-// Перебор вложенных объектов
-for (let key in BlockOptions) {
-   // Проверка есть ли вложение в объекте
-   if (typeof(BlockOptions[key]) === 'object') {
-      for (let i in BlockOptions[key]) {         
-         console.log(`Свойство: ${i}, имеет значение ${BlockOptions[key][i]}`);
-         counterOptions++;
-      }
-   } else {
-      console.log(`Свойство: ${key}, имеет значение ${BlockOptions[key]}`);
-      counterOptions++;
-   }
-}
+// let counterOptions = 0;
+// ============== Перебор вложенных объектов =====================================
+// for (let key in BlockOptions) {
+//    // Проверка есть ли вложение в объекте
+//    if (typeof(BlockOptions[key]) === 'object') {
+//       for (let i in BlockOptions[key]) {         
+//           console.log(`Свойство: ${i}, имеет значение ${BlockOptions[key][i]}`);
+//           counterOptions++;
+//       }
+//    } else {
+//        console.log(`Свойство: ${key}, имеет значение ${BlockOptions[key]}`);
+//        counterOptions++;
+//    }
+// }
 // console.log(counterOptions);
 
-// Способ для получения количества элементов в объекте
+// ============== Способ для получения количества элементов в объекте ============
 // console.log(Object.keys(BlockOptions).length);
 
 
