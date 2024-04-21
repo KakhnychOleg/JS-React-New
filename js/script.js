@@ -1,5 +1,42 @@
 'use strict';
 
+// Object ES6 =======================================================================================
+const BlockOptions = {
+   width: 1024,
+   height: 1024,
+   color: {
+      bg: 'red',
+      border: '1px'
+   },
+   makeTest: function () {
+      console.log("Test");
+   }
+}
+// Проверка работы функций в объекте
+// BlockOptions.makeTest();
+
+// Переменная для подсчета вложенных элементов
+let counterOptions = 0;
+// Перебор вложенных объектов
+for (let key in BlockOptions) {
+   // Проверка есть ли вложение в объекте
+   if (typeof(BlockOptions[key]) === 'object') {
+      for (let i in BlockOptions[key]) {         
+         console.log(`Свойство: ${i}, имеет значение ${BlockOptions[key][i]}`);
+         counterOptions++;
+      }
+   } else {
+      console.log(`Свойство: ${key}, имеет значение ${BlockOptions[key]}`);
+      counterOptions++;
+   }
+}
+// console.log(counterOptions);
+
+// Способ для получения количества элементов в объекте
+// console.log(Object.keys(BlockOptions).length);
+
+
+
 // Callback function ================================================================================
 function firstFunction(arg1, callback) {
    console.log(`Первая функция: ${arg1}!`);
@@ -10,7 +47,7 @@ function done() {
    console.log('Good!');
 }
 
-firstFunction(5, done);
+// firstFunction(5, done);
 
 // Пример анонимной функции ++++++++++++++++++++++
 // firstFunction(5, function() {
