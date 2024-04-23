@@ -1,5 +1,52 @@
 'use strict';
 
+// ES 6 - ES 9 =====================================================================================
+// let a = 5,
+//     b = a;
+
+// console.log(a);
+// console.log(b);
+
+// const obj = {
+//    a: 5,
+//    b: 1
+// };
+
+// const copy = obj; // Ссылка на const obj
+
+// copy.a = 10;
+
+// console.log(copy);
+// console.log(obj);
+
+function copy(mainObj) {
+   let objCopy = {};
+
+   let key;
+   for (key in mainObj) {
+      objCopy[key] = mainObj[key];
+   }
+
+   return objCopy;
+}
+
+const numbers = {
+   a: 2,
+   b: 5,
+   c: {
+      x: 7,
+      y: 4
+   }
+};
+
+const newNumbers = copy(numbers);
+
+newNumbers.a = 10;
+
+console.log(newNumbers); // { a: 10, b: 5, c: { x: 7, y: 4 } }
+console.log(numbers); // { a: 2, b: 5, c: { x: 7, y: 4 } }
+
+
 // Array ============================================================================================
 // const arr = [1, 2, 3, 6, 8]
 // const arr = [52, 13, 46, 38]
