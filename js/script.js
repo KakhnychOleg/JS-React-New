@@ -1,5 +1,87 @@
 'use strict';
 
+// Tests ==========================================================================================
+
+const personalPlanPeter = {
+   name: "Peter",
+   age: "29",
+   skills: {
+       languages: ['ru', 'eng'],
+       programmingLangs: {
+           js: '20%',
+           php: '10%'
+       },
+       exp: '1 month'
+   }
+};
+
+function showExperience(plan) {
+   let {exp} = plan.skills;
+   return exp;
+}
+showExperience(personalPlanPeter);
+
+
+function showProgrammingLangs(plan) {
+   let str = ' ';
+
+   let {programmingLangs} = plan.skills;
+   for ( let key in programmingLangs) {
+      str += `Язык ${key} изучен на ${programmingLangs[key]}\n`;
+   }
+   
+   return str;
+}
+
+showProgrammingLangs(personalPlanPeter);
+
+
+// const personalPlanPeter = {
+//    name: "Peter",
+//    age: "29",
+//    skills: {
+//        languages: ['ru', 'eng'],
+//        programmingLangs: {
+//            js: '20%',
+//            php: '10%'
+//        },
+//        exp: '1 month'
+//    },
+//    showAgeAndLangs: function(plan) {
+//        const {age} = plan;
+//        const {languages} = plan.skills;
+//        let str = `Мне ${age} и я владею языками: `;
+
+//        languages.forEach(function(lang) {
+//            str += `${lang.toUpperCase()} `;
+//        });
+
+//        return str;
+//    }
+// };
+
+// personalPlanPeter.showAgeAndLangs(personalPlanPeter);
+
+// function showExperience(plan) {
+//    const {exp} = plan.skills;
+//    return exp;
+// }
+
+// showExperience(personalPlanPeter);
+
+// function showProgrammingLangs(plan) {
+//    let str = '';
+//    const {programmingLangs} = plan.skills;
+//    for (let key in programmingLangs) {
+//        str += `Язык ${key} изучен на ${programmingLangs[key]}\n`
+//    }
+
+//    return str;
+// }
+
+// showProgrammingLangs(personalPlanPeter);
+
+
 // ES 6 - ES 9 =====================================================================================
 // let a = 5,
 //     b = a;
@@ -63,27 +145,27 @@ const newArray = oldArray.slice();
 
 newArray[1] = 'asdaddada';
 
-console.log(newArray);
-console.log(oldArray);
+// console.log(newArray);
+// console.log(oldArray);
 
 const video = ['Youtube', 'Vimeo', 'Rutube'],
       blogs = ['Wordpress', 'Livejornal', 'Blogger'],
       internet = [...video, ...blogs, 'Vk', 'Facebook'];
 
-console.log(internet);
+// console.log(internet);
 
 function log(a, b, c) {
-   console.log(a);
-   console.log(b);
-   console.log(c);
+   // console.log(a);
+   // console.log(b);
+   // console.log(c);
 }
 const num = [2, 5, 7];
 
-log(...num);
+// log(...num);
 
 const array = ['a', 'o'];
 
-const newAarray = [...array];
+const newAarray = [...array]
 
 // Array ============================================================================================
 // const arr = [1, 2, 3, 6, 8]
