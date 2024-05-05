@@ -1,5 +1,30 @@
 'use strict';
 
+// OOP ==============================================================================================
+let str = "Some";
+let strObj = new String(str);
+
+console.log(typeof(str));
+console.log(typeof(strObj));
+
+console.dir([1, 2, 3]);
+
+const solder = {
+   health: 400,
+   armor: 100,
+   sayHello: function() {
+      console.log('Hi!');
+   }
+};
+
+const john = Object.create(solder);
+// const john = {
+//    health: 100
+// };
+
+// Object.setPrototypeOf(john, solder);
+john.sayHello();
+
 // Tests 3.0 =========================================================================================
 const someString = 'This is some strange string';
 
