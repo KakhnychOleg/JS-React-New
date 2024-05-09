@@ -1,13 +1,86 @@
 'use strict';
 
+// Object ===========================================================================================
+
+const peronalMovieDB = {
+   count: 0,
+   movies: {},
+   actors: {},
+   genres: [],
+   privat: false,
+   start: function() {
+      peronalMovieDB.count = +prompt("Сколько фильмов вы уже просмотрели?", "");
+   
+      while (peronalMovieDB.count == '' || peronalMovieDB.count == null || isNaN(peronalMovieDB.count)) {
+         peronalMovieDB.count = +prompt("Сколько фильмов вы уже просмотрели?", "");
+      }
+   },
+   rememberMyFilms: function() {
+      for (let i = 0; i < 2; i++) {
+         let a = prompt("Один из последних просмотренных фильмов?", "");
+         let b = prompt("На сколько вы оцениваете его?", "");
+   
+         if (a != '' && b != '' && a != true && b != true && a.length != 50) {
+            peronalMovieDB.movies[a] = b;
+            console.log('Ales Good!');
+         } else {
+            console.log('Problema');
+            i--;
+         }
+      }
+   },
+   detectePersonalLevel: function() {
+      if (peronalMovieDB.count < 10) {
+         console.log('Просмотрено довольно мало фильмов');
+      } else if (peronalMovieDB.count >= 10 && peronalMovieDB.count < 30) {
+         console.log('Вы классический зритель');
+      } else if (peronalMovieDB.count >= 30) {
+         console.log('Вы киноман');
+      } else {
+         console.log('Ошибка');
+      }
+   },
+   showMyDB: function(hidden) {
+      if (!hidden) {
+         console.log(peronalMovieDB);
+      }
+   },
+   toggleVisibleMyDB: function() {
+      if (peronalMovieDB.privat) {
+         peronalMovieDB.privat = false;
+      } else {
+         peronalMovieDB.privat = true;
+      }
+   },
+   writeYourGenres: function() {
+      for (let j = 1; j <= 3; j++) {
+         let genre = prompt(`Ваш любимый жанр под номером ${j}`);
+
+         if (genre === "" || genre == null) {
+            console.log("Вы ввели некорректное значение");
+            j--;
+         } else {
+            peronalMovieDB.genres[j - 1] = genre;
+         }
+      }
+
+      peronalMovieDB.genres.forEach((item, j) => {
+         console.log(`Любимый жанр ${j + 1} - это ${item}`);
+      });
+   }
+}
+
+
+
+
 // OOP ==============================================================================================
-let str = "Some";
-let strObj = new String(str);
+// let str = "Some";
+// let strObj = new String(str);
 
-console.log(typeof(str));
-console.log(typeof(strObj));
+// console.log(typeof(str));
+// console.log(typeof(strObj));
 
-console.dir([1, 2, 3]);
+// console.dir([1, 2, 3]);
 
 const solder = {
    health: 400,
@@ -23,7 +96,7 @@ const john = Object.create(solder);
 // };
 
 // Object.setPrototypeOf(john, solder);
-john.sayHello();
+// john.sayHello();
 
 // Tests 3.0 =========================================================================================
 const someString = 'This is some strange string';
@@ -357,78 +430,78 @@ function getCoupeNumber(placeNumber) {
 
 
 // optimaze user popup. Part 2 =======================================================================
-let numberOfFilms;
+// let numberOfFilms;
 
-function start() {
-   numberOfFilms = +prompt("Сколько фильмов вы уже просмотрели?", "");
+// function start() {
+//    numberOfFilms = +prompt("Сколько фильмов вы уже просмотрели?", "");
 
-   while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-      numberOfFilms = +prompt("Сколько фильмов вы уже просмотрели?", "");
-   }
-}
+//    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+//       numberOfFilms = +prompt("Сколько фильмов вы уже просмотрели?", "");
+//    }
+// }
 
-// start();
+// // start();
 
-const peronalMovieDB = {
-   count: numberOfFilms,
-   movies: {},
-   actors: {},
-   genres: [],
-   privat: false
-}
+// const peronalMovieDB = {
+//    count: numberOfFilms,
+//    movies: {},
+//    actors: {},
+//    genres: [],
+//    privat: false
+// }
 
-function rememberMyFilms () {
-   for (let i = 0; i < 2; i++) {
-      let a = prompt("Один из последних просмотренных фильмов?", "");
-      let b = prompt("На сколько вы оцениваете его?", "");
+// function rememberMyFilms () {
+//    for (let i = 0; i < 2; i++) {
+//       let a = prompt("Один из последних просмотренных фильмов?", "");
+//       let b = prompt("На сколько вы оцениваете его?", "");
 
-      if (a != '' && b != '' && a != true && b != true && a.length != 50) {
-         peronalMovieDB.movies[a] = b;
-         console.log('Ales Good!');
-      } else {
-         console.log('Problema');
-         i--;
-      }
-   }
-}
+//       if (a != '' && b != '' && a != true && b != true && a.length != 50) {
+//          peronalMovieDB.movies[a] = b;
+//          console.log('Ales Good!');
+//       } else {
+//          console.log('Problema');
+//          i--;
+//       }
+//    }
+// }
 
-// rememberMyFilms();
+// // rememberMyFilms();
 
-function detectePersonalLevel() {
-   if (peronalMovieDB.count < 10) {
-      console.log('Просмотрено довольно мало фильмов');
-   } else if (peronalMovieDB.count >= 10 && peronalMovieDB.count < 30) {
-      console.log('Вы классический зритель');
-   } else if (peronalMovieDB.count >= 30) {
-      console.log('Вы киноман');
-   } else {
-      console.log('Ошибка');
-   }
-}
+// function detectePersonalLevel() {
+//    if (peronalMovieDB.count < 10) {
+//       console.log('Просмотрено довольно мало фильмов');
+//    } else if (peronalMovieDB.count >= 10 && peronalMovieDB.count < 30) {
+//       console.log('Вы классический зритель');
+//    } else if (peronalMovieDB.count >= 30) {
+//       console.log('Вы киноман');
+//    } else {
+//       console.log('Ошибка');
+//    }
+// }
 
-// detectePersonalLevel();
+// // detectePersonalLevel();
 
-// Выводит обьект с информацие если не стоит peronalMovieDB.privat = true
-function showMyDB(hidden) {
-   if (!hidden) {
-      console.log(peronalMovieDB);
-   }
-}
+// // Выводит обьект с информацие если не стоит peronalMovieDB.privat = true
+// function showMyDB(hidden) {
+//    if (!hidden) {
+//       console.log(peronalMovieDB);
+//    }
+// }
 
-// showMyDB(peronalMovieDB.privat);
+// // showMyDB(peronalMovieDB.privat);
 
-function writeYourGenres() {
-   for (let j = 1; j <= 3; j++) {
-      // Усовершенствованный вариант кода
-      peronalMovieDB.genres[j - 1] = prompt(`Ваш любимый жанр под номером ${j}`);
+// function writeYourGenres() {
+//    for (let j = 1; j <= 3; j++) {
+//       // Усовершенствованный вариант кода
+//       peronalMovieDB.genres[j - 1] = prompt(`Ваш любимый жанр под номером ${j}`);
 
-      // Обычный вариант кода
-      // const genre = prompt(`Ваш любимый жанр под номером ${j}`);
-      // peronalMovieDB.genres[j - 1] = genre;
-   }
-}
+//       // Обычный вариант кода
+//       // const genre = prompt(`Ваш любимый жанр под номером ${j}`);
+//       // peronalMovieDB.genres[j - 1] = genre;
+//    }
+// }
 
-// writeYourGenres();
+// // writeYourGenres();
 
 
 
