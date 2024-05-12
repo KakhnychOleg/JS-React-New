@@ -1,5 +1,27 @@
 'use strict';
 
+// array test.01 =====================================================================================
+const itemArray = [43, 23, 4, 123];
+
+console.log(itemArray.sort( function(a, b) {
+   return a - b;
+}));
+
+const itemStringArray = ['Abs', 'gava', 'bAll'];
+
+console.log(itemStringArray.sort());
+
+// function itemString(arr) {
+//    for (let i = 0; i <arr.length; i++) {
+//       sorted = [];
+//       sorted.push(arr[i].toLowerCase());
+//    }
+// };
+
+// itemString(itemStringArray);
+// console.log(itemString(itemStringArray));
+
+
 // Object test.01 =====================================================================================
 const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
 
@@ -26,8 +48,8 @@ function sortStudentsByGroups(arr) {
    return [teamOne, teamTwo, teamThree, `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(', ')}` ]
 
 }
-sortStudentsByGroups(students);
-console.log(sortStudentsByGroups(students));
+// sortStudentsByGroups(students);
+// console.log(sortStudentsByGroups(students));
 
 // Object test.01 =====================================================================================
 const shoppingMallData = {
