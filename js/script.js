@@ -1,15 +1,72 @@
 'use strict';
 
-// array test.01 =====================================================================================
-const itemArray = [43, 23, 4, 123];
+// Динамическая типизация ============================================================================
 
-console.log(itemArray.sort( function(a, b) {
-   return a - b;
-}));
+
+// document.getElementById("myId").style.cssText = "background-color:pink;"
+
+
+// 1)
+// console.log(typeof(String(null)));
+// console.log(typeof(String(5)));
+
+// 2)
+// console.log(typeof(5 + ''));
+// console.log(typeof(null + ''));
+
+// const nam = 5;
+// console.log('https://domen.com/' + nam);
+
+// const fontSize = 26 + 'px';
+
+// To number
+
+// 1)
+// console.log(typeof(Number('5')));
+
+// 2)
+// console.log(typeof(+"5"));
+
+// 3)
+// console.log(typeof(parseInt("15px", 10)));
+
+
+// To boolean
+// False
+0, '', null, undefined, NaN;
+
+// 1)
+// let switcher = null;
+
+// if (switcher) {
+//    console.log('Working...');
+// } 
+
+// switcher = 1;
+
+// if (switcher) {
+//    console.log('Working 2...');
+// } 
+
+// 2)
+// console.log(typeof(Boolean('5')));
+
+// 3)
+// console.log(typeof(!!"5"));
+
+
+// array test.01 =====================================================================================
+
+// const itemArray = [43, 23, 4, 123];
+// console.log(itemArray.sort( function(a, b) {
+//    return a - b;
+// }));
+
 
 const itemStringArray = ['Abs', 'gava', 'bAll'];
+// console.log(itemStringArray.sort());
 
-console.log(itemStringArray.sort());
+
 
 // function itemString(arr) {
 //    for (let i = 0; i <arr.length; i++) {
