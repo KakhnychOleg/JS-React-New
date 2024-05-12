@@ -1,6 +1,35 @@
 'use strict';
 
-// Object test.01 ===========================================================================================
+// Object test.01 =====================================================================================
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam'];
+
+function sortStudentsByGroups(arr) {
+   arr.sort();
+   
+   const teamOne = [], 
+         teamTwo = [], 
+         teamThree = [], 
+         rest = [];
+
+   for (let i = 0; i < arr.length; i++) {
+      if (i < 3) {
+         teamOne.push(arr[i]);
+      } else if (i < 6) {
+         teamTwo.push(arr[i]);
+      } else if (i < 9) {
+         teamThree.push(arr[i]);
+      } else {
+         rest.push(arr[i]);
+      }
+   }
+
+   return [teamOne, teamTwo, teamThree, `Оставшиеся студенты: ${rest.length === 0 ? '-' : rest.join(', ')}` ]
+
+}
+sortStudentsByGroups(students);
+console.log(sortStudentsByGroups(students));
+
+// Object test.01 =====================================================================================
 const shoppingMallData = {
    shops: [
       {
@@ -43,7 +72,7 @@ function isBudgetEnough(data) {
       return 'Бюджета недостаточно';
    }
 }
-isBudgetEnough(shoppingMallData);
+// isBudgetEnough(shoppingMallData);
 
 
 // Object ===========================================================================================
