@@ -1,6 +1,47 @@
 'use strict';
 
 // Повтор, тесты ====================================================================================
+// 1)
+// let x = 5;
+// console.log(x++);
+
+// 2)
+// console.log([] + false - null + true); // NaN
+
+// 3)
+// let y = 1;
+// let x = y = 2;
+// alert(x); // 2
+
+// 4)
+// console.log([] + 1 + 2); //"12"
+
+// 5)
+// alert("1"[0]); //1
+
+// 6)
+// console.log(2 && 1 && null && 0 && undefined); // null
+
+// 7)
+// console.log(!!( 1 && 2 ) === ( 1 && 2 )); //false
+
+// 8)
+// alert( null || 2 && 3 || 4); // 3
+
+// 9)
+// const a = [1, 2, 3];
+// const b = [1, 2, 3];
+// console.log(a === b); // false
+
+// 10)
+// alert(+"infinity");  //infinity
+
+// 11)
+// console.log("Eжик" > "яблоко"); //false
+
+// 12)
+// console.log(0 || "" || 2 || undefined || true || false); // true
+
 
 
 // Замыкания и лексическое окружение ================================================================
@@ -35,7 +76,7 @@ const c1 = increment();
 const c2 = increment();
 const c3 = increment();
 
- console.log(c1, c2, c3);
+//  console.log(c1, c2, c3);
 
 // Динамическая типизация ============================================================================
 
