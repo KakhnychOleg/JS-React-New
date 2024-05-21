@@ -1,5 +1,43 @@
 'use strict';
 
+// ================================================================================================
+//  const someName = document.getElementById('');
+const box = document.getElementById('box');
+const boxTwo = document.getElementsByClassName('boxTwo');
+
+box.style.backgroundColor = 'blue';
+box.style.width = '100px';
+box.style.height = '100px';
+
+boxTwo[0].style.color = 'red';
+// Для моного строчных стилей
+// box.style.cssText = 'background-color: red; width: 200px';
+// box.style.cssText = `background-color: red; width: ${paramWidth}`;
+
+//Циклы стилей
+// for (let i = 0; i < box; i++) {
+//    box[i].style.backgroundColor = 'blue';
+// }
+
+// box.forEach(item => {
+//    item.style.backgroundColor = 'blue';
+// });
+
+// const div = document.createElement('div');
+// const text = document.createTextNode('text');
+
+// div.classList.add('black');
+
+box.innerHTML = "Hello!"   ;
+div.textContent = "Hello";
+
+// Вставить элемент в Конце
+// document.body.append(div);
+
+// Вставить элемент в Начале
+// document.body.prepend(div);
+
+
 // test 3.0 ========================================================================================
 // Search error in code
 const restorantData = {
@@ -36,7 +74,7 @@ function isOpen(prop) {
    return answer;
 }
 // console.log(restorantData.openNow);
-console.log(isOpen(restorantData.openNow));
+// console.log(isOpen(restorantData.openNow));
 
 function isAverageLunchPriceTrue(fDish, sDish, average) {
    if (+fDish.price.slice(0, -1) + (+sDish.price.slice(0, -1)) < +average.slice(0,-1)) {
@@ -46,7 +84,7 @@ function isAverageLunchPriceTrue(fDish, sDish, average) {
    }
 }
 
-console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
+// console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
 
 function transferWaitors(data) {
    const copy = Object.assign({}, data);
@@ -56,7 +94,7 @@ function transferWaitors(data) {
    return copy; 
 }
 
-transferWaitors(restorantData); 
+// transferWaitors(restorantData); 
 // console.log(transferWaitors(restorantData.waitors));
 
 
