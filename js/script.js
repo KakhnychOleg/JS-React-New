@@ -1,4 +1,54 @@
 'use strict';
+
+// ================================================================================================
+// const btn = document.querySelector('button');
+const btns = document.querySelector('button');
+
+// Не рекомендуемый формат для записи
+// btn.onclick = function() {
+//    alert('Click!');
+// };
+// можно забыть про первый элемент и получать только последний вариант записи
+// btn.onclick = function() {
+//    alert('Second click!');
+// };
+
+// Правильная запись ================================
+// btn.addEventListener('click', () => {
+//    alert('Click!');
+// });
+
+// btn.addEventListener('mouseenter', (event) => {
+//    // console.log(event);
+//    console.log(event.target);
+//    // event.target.remove();
+//    // console.log('enter');
+// });
+
+let i = 0;
+
+const deleteElement = (e) => {
+   console.log(e.target);
+   i++;
+   if(i == 1) {
+      btn.removeEventListener('mouseenter', deleteElement);
+   }
+};
+
+// btn.addEventListener('mouseenter', deleteElement);
+btns.forEach(bts => {
+   bts.addEventListener('click', deleteElement);
+});
+
+const link = document.querySelector('a');
+
+link.addEventListener('click', function(event) {
+   event.preventDefault();
+
+   console.log(event.target);
+});
+
+
 // ================================================================================================
 /*
 1) Удалить все рекламные блоки со страницы (правая часть сайта)
