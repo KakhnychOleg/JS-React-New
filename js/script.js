@@ -1,5 +1,22 @@
 'use strict';
 
+// Test on recurs =================================================================================
+function factorial(n) {
+   if (typeof(n) !== 'number' || !Number.isInteger(n)) {
+      return 'Error!'
+   } 
+   if (n >= 1) {
+      return n * factorial(n - 1);
+   } else {
+      return 1;
+   }
+}
+factorial(5);
+console.log(factorial(5));
+console.log(factorial('das'));
+
+
+
 // ================================================================================================
 // function pow(x, n) {
 //    let result = 1;
