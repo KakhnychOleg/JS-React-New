@@ -1,22 +1,53 @@
 'use strict';
 
 // =======================================================================================================
+// Оператор опциональной цепочки (?.)
 const box = document.querySelector('.box');
+const block = document.querySelector('.block');
 
-const newHeight = 100;
-const newWidth = 400;
+// console.log(block);
 
-function changeParams(elem, h, w) {
-   elem.style.height = `${h ?? 200}px`; 
-   elem.style.width = `${w ?? 200}px`;  
-   elem.innerHTML = (h ?? 200) * (w ?? 200);
-}
+// if (block) {
+//    console.log(block.textContent);
+// }
 
-changeParams(box, newHeight, newWidth);
+// console.log(block?.textContent);
+// console.log(1 + 2);
+const userData = {
+   name: 'Ivan',
+   age: null,
+   say: function() {
+      console.log('Hello');
+   }
+};
 
-let userName;
-let userKey;
-console.log(userName ?? userKey ?? 'User');
+userData.say();
+userData.hey?.();
+
+// if (userData && userData.skills && userData.skills.js) {
+//    console.log(userData.skills.js);
+// }
+
+console.log(userData?.skills?.js);
+
+
+// =======================================================================================================
+// const box = document.querySelector('.box');
+
+// const newHeight = 100;
+// const newWidth = 400;
+
+// function changeParams(elem, h, w) {
+//    elem.style.height = `${h ?? 200}px`; 
+//    elem.style.width = `${w ?? 200}px`;  
+//    elem.innerHTML = (h ?? 200) * (w ?? 200);
+// }
+
+// changeParams(box, newHeight, newWidth);
+
+// let userName;
+// let userKey;
+// console.log(userName ?? userKey ?? 'User');
 
 // ?? - реагирует только на null или undefined
 // Оператор нулевого слияния (??) — это логический оператор, возвращающий значение правого операнда, если значение левого операнда содержит null или undefined, в противном случае возвращается значение левого операнда.
@@ -127,9 +158,9 @@ function factorial(n) {
       return 1;
    }
 }
-factorial(5);
-console.log(factorial(5));
-console.log(factorial('das'));
+// factorial(5);
+// console.log(factorial(5));
+// console.log(factorial('das'));
 
 
 
@@ -242,7 +273,7 @@ function getTotalProgressByRecursion(data) {
 
 const result = getTotalProgressByRecursion(students);
 
-console.log(result[0]/result[1]);
+// console.log(result[0]/result[1]);
 
 
 // ================================================================================================
