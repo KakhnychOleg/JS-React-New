@@ -1,9 +1,24 @@
 'use strict';
 
 // =======================================================================================================
+// Symbol
+const obj = {
+   'name': 'Test',
+   [Symbol('id')]: 1,
+   id: 123
+}
+
+// let id = Symbol('id');
+// obj[id] = 1;
+
+// console.log(obj);
+// console.log(obj[id]);
+
+
+// =======================================================================================================
 // Оператор опциональной цепочки (?.)
-const boxesQuery = document.querySelectorAll('.box');
-const boxesGet = document.getElementsByClassName('box');
+// const boxesQuery = document.querySelectorAll('.box');
+// const boxesGet = document.getElementsByClassName('box');
 
 boxesQuery.forEach(box => {
    if (box.matches('.this')) {
