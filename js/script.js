@@ -1,6 +1,7 @@
 'use strict';
 
 // =======================================================================================================
+// Iteration
 const user = {
    name: 'Alex',
    surname: 'Smith',
@@ -9,21 +10,75 @@ const user = {
       console.log(`${this.name} ${this.surname}`);
    }
 }
+
+// for (const key in user) {
+//    console.log(user[key]);
+// }
+
+const arr = ['b', 'a', 'c'];
+// const obj = {'b': 2, 'a':3, 'c':4};
+
+// for (const key of arr) {
+//    console.log(key);
+// }
+
+const saleries = {
+   john: 500,
+   ivan: 1000,
+   ann: 5000,
+   sayHello: function() {
+      console.log("Hello");
+   }
+}
+
+saleries[Symbol.iterator] = function() {
+   return {
+      current: this.john,
+      last: this.ann,
+
+      next() {
+         if(this.current < this.last) {
+            this.current = this.current + 500;
+            return {done: false, value: this.current}
+         } else {
+            return {done: true}
+         }
+      }
+   }
+}
+
+const iterator = saleries[Symbol.iterator]();
+console.log(iterator.next());
+
+// for (let res of saleries) {
+//    console.log(res);
+// }
+
+
+// =======================================================================================================
+// const user = {
+//    name: 'Alex',
+//    surname: 'Smith',
+//    birthday: '20/04/1994',
+//    showMyPublickData: function() {
+//       console.log(`${this.name} ${this.surname}`);
+//    }
+// }
 // Object.defineProperty(user, 'birthday', {writable: false});
 // Object.defineProperty(user, 'birthday', {value: prompt('Date?'), enumerable: true, configurable: true});
 
-console.log(Object.getOwnPropertyDescriptor(Math, 'PI'));
+// console.log(Object.getOwnPropertyDescriptor(Math, 'PI'));
 
-Object.defineProperty(user, 'showMyPublicData', {enumerable: false});
+// Object.defineProperty(user, 'showMyPublicData', {enumerable: false});
 
-for (let key in user) {
-   console.log(key);
-}
+// for (let key in user) {
+//    console.log(key);
+// }
 
-Object.defineProperties(user, {
-   name: {writable: false},
-   surname: {writable: false}
-});
+// Object.defineProperties(user, {
+//    name: {writable: false},
+//    surname: {writable: false}
+// });
 
 // writable
 // enumerable
@@ -32,11 +87,11 @@ Object.defineProperties(user, {
 
 // =======================================================================================================
 // Symbol
-const obj = {
-   'name': 'Test',
-   [Symbol('id')]: 1,
-   id: 123
-}
+// const obj = {
+//    'name': 'Test',
+//    [Symbol('id')]: 1,
+//    id: 123
+// }
 
 // let id = Symbol('id');
 // obj[id] = 1;
@@ -50,11 +105,11 @@ const obj = {
 // const boxesQuery = document.querySelectorAll('.box');
 // const boxesGet = document.getElementsByClassName('box');
 
-boxesQuery.forEach(box => {
-   if (box.matches('.this')) {
-      console.log(box);
-   } 
-}); 
+// boxesQuery.forEach(box => {
+//    if (box.matches('.this')) {
+//       console.log(box);
+//    } 
+// }); 
 
 // boxesQuery[0].remove();
 // boxesGet[0].remove();
