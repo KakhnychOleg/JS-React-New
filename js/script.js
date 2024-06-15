@@ -1,5 +1,33 @@
 'use strict';
 
+// =======================================================================================================
+// *Set
+const arr = ['Alex', 'Anna', 'Oleg', 'Alex'];
+
+function unique(arr) {
+   return Array.from(new Set(arr));
+}
+
+console.log(unique(arr));
+
+// const set = new Set(arr);
+
+// set.add('Ivan');
+// set.add('Oleg');
+
+// console.log(set);
+
+// set.forEach((value, valueAgain, set) => {
+//    console.log(value, valueAgain);
+// });
+
+// console.log(set.values());
+// console.log(set.keys());
+// console.log(et.entries());
+
+
+// =======================================================================================================
+
 // const user = {
 //    name: 'Alex',
 //    surname: 'Smith',
@@ -16,7 +44,7 @@ const shops = [
    {bread: 50}
 ];
 
-const budget = [5000, 15000, 25000];
+// const budget = [5000, 15000, 25000];
 
 // const map = new Map();
 const map = new Map([
@@ -31,7 +59,7 @@ shops.forEach((shop, i) => {
 // map.set(shops[1], 15000);
 // map.set(shops[2], 25000);
 
-console.log(map);
+// console.log(map);
 // console.log(map.get(shops[0]));
 
 // map.delete(key);
