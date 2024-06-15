@@ -1,21 +1,68 @@
 'use strict';
 
+// const user = {
+//    name: 'Alex',
+//    surname: 'Smith',
+//    birthday: '20/04/1994',
+//    showMyPublickData: function() {
+//       console.log(`${this.name} ${this.surname}`);
+//    }
+// }
+// console.log(user);
+
+const shops = [
+   {rice: 500},
+   {oil: 200},
+   {bread: 50}
+];
+
+const budget = [5000, 15000, 25000];
+
+// const map = new Map();
+const map = new Map([
+   [{paper: 400}, 8000]
+]);
+
+shops.forEach((shop, i) => {
+   map.set(shop, budget[i]);
+});
+
+// map.set(shops[0], 5000);
+// map.set(shops[1], 15000);
+// map.set(shops[2], 25000);
+
+console.log(map);
+// console.log(map.get(shops[0]));
+
+// map.delete(key);
+// map.clear();
+// map.size();
+// map.keys();
+
+// for (let price of map.entries()) {
+//    console.log(price)
+// };
+
+// for (let [shop, price] of map.entries()) {
+//    console.log(price, shop)
+// };
+
 // =======================================================================================================
 // Iteration
-const user = {
-   name: 'Alex',
-   surname: 'Smith',
-   birthday: '20/04/1994',
-   showMyPublickData: function() {
-      console.log(`${this.name} ${this.surname}`);
-   }
-}
+// const user = {
+//    name: 'Alex',
+//    surname: 'Smith',
+//    birthday: '20/04/1994',
+//    showMyPublickData: function() {
+//       // console.log(`${this.name} ${this.surname}`);
+//    }
+// }
 
 // for (const key in user) {
 //    console.log(user[key]);
 // }
 
-const arr = ['b', 'a', 'c'];
+// const arr = ['b', 'a', 'c'];
 // const obj = {'b': 2, 'a':3, 'c':4};
 
 // for (const key of arr) {
@@ -48,7 +95,7 @@ saleries[Symbol.iterator] = function() {
 }
 
 const iterator = saleries[Symbol.iterator]();
-console.log(iterator.next());
+// console.log(iterator.next());
 
 // for (let res of saleries) {
 //    console.log(res);
